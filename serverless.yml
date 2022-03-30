@@ -1,0 +1,51 @@
+service: expressInAWSDemo #Name of your App
+
+provider:
+ name: aws
+ runtime: nodejs14.x # Node JS version
+ memorySize: 512
+ timeout: 15
+ stage: production
+ region: ap-south-1 # AWS region
+
+functions:
+#  api:
+#    handler: lambda.handler
+#    events:
+#     #  - http: ANY {proxy+}
+#      - http: ANY /
+  postApiTest:
+    handler: lambda.handler
+    name: post-api-test
+    events:
+      - http:
+          path: logthis
+          method: post
+          private: false
+  getApiTest:
+    handler: lambda.handler
+    name: get-api-test
+    events:
+      - http:
+          path: hello
+          method: get
+          private: false
+  postTimeTest:
+    handler: lambda.handler
+    name: post-time-test
+    events:
+      - http:
+          path: time
+          method: post
+          private: false
+  getAllItems:
+    handler: lambda.handler
+    name: get-all-items
+    events:
+      - http:
+          path: allItems
+          method: get
+          private: false
+
+
+          

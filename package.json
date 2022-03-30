@@ -1,0 +1,21 @@
+{
+  "name": "express_in_aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node local.js",
+    "deploy": "npm i && serverless deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1091.0",
+    "aws-serverless-express": "^3.3.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "serverless": "^3.7.1"
+  }
+}
